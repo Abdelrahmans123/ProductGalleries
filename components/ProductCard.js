@@ -2,11 +2,12 @@
 import Link from "next/link";
 import React from "react";
 import { Card } from "react-bootstrap";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const ProductCard = ({ product, imageStyle, productStyle, category }) => {
-	const router = useRouter();
-	const isActive = router.asPath === `/products/${product.id}`;
+	const pathname = usePathname();
+	const isActive = pathname === `/products/${product.id}`;
+	console.log("🚀 ~ ProductCard ~ pathname:", pathname);
 	return (
 		<Card className="h-100" style={productStyle}>
 			<Card.Img
