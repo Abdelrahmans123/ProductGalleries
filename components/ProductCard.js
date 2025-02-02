@@ -1,7 +1,8 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { Card } from "react-bootstrap";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const ProductCard = ({ product, imageStyle, productStyle, category }) => {
 	const router = useRouter();
